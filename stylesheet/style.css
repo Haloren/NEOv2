@@ -1,0 +1,44 @@
+/*
+ Palette 
+drkblue #00113f
+blackish #000211
+whiteish #fdecdc
+orange #f19003
+yellow #fed410
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {    
+    margin: 0;
+    min-height: 100vh;
+    
+    background: #00113f;
+    background-image: url("../images/BlueBG.png");
+    background-size: cover;
+    background-position: center;
+
+    font-family: 'Orbitron', sans-serif;
+    color: aliceblue;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #f19003;
+    text-shadow: -3px -3px #fdecdc;
+}
+
+.countdown-container {
+
+}
+
+.digit {
+
+}
+
+.copyright {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}

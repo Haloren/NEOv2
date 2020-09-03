@@ -9,3 +9,8 @@ NEO (use NASA Api instead of scraping)
 	-[] Earth, Moon, and Astroid visual to show the astroids closest approach to earth (lunar miss_distance)
 	-[] Astroid min(solid) - max(transparent) est size compared to a known object (eg football stadium)
 	-[] Add RedLight toggle for better night sky viewing option
+
+
+
+Transpiling SCSS into CSS
+	https://code.visualstudio.com/docs/languages/css#_transpiling-sass-and-less-into-css
