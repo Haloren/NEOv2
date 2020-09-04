@@ -10,6 +10,8 @@ NEO (use NASA Api instead of scraping)
 	-[] Astroid min(solid) - max(transparent) est size compared to a known object (eg football stadium)
 	-[] Add RedLight toggle for better night sky viewing option
 
+Lunar Distance (Earth-Moon distance)
+https://en.wikipedia.org/wiki/Lunar_distance_(astronomy)
 
 
 Transpiling SCSS into CSS

@@ -4,7 +4,7 @@ const m = document.getElementById('minutes');
 const s = document.getElementById('seconds');
 
 // Nearest approach astroid date should populate here
-const nearestApproach = "1 Jan 2021"; 
+const nearestApproach = "13 Apr 2029"; 
 
 function countdown() {
     const nearestDate = new Date(nearestApproach);
