@@ -1,6 +1,7 @@
 /*
  Palette 
 drkblue #00113f
+blue #0489ee
 blackish #000211
 whiteish #fdecdc
 orange #f19003
@@ -19,6 +20,10 @@ body {
     background-size: cover;
     background-position: center;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     font-family: 'Orbitron', sans-serif;
     color: aliceblue;
 }
@@ -28,13 +33,23 @@ h1 {
     color: #f19003;
     text-shadow: -3px -3px #fdecdc;
 }
-
-.countdown-container {
+h2 {
 
 }
 
-.digit {
+.countdown-container {
+    display: flex;
+    text-align: center;
+}
 
+.datetime {
+    text-align: center;
+}
+
+.digit {
+    font-size: 5rem;
+    line-height: 1;
+    margin: 0 1rem;
 }
 
 .copyright {
