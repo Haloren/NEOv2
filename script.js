@@ -3,7 +3,7 @@ const h = document.getElementById('hours');
 const m = document.getElementById('minutes');
 const s = document.getElementById('seconds');
 
-// Nearest approach astroid date should populate here
+// Nearest approach astroid or default to "13 Apr 2029"
 const nearestApproach = "13 Apr 2029"; 
 
 function countdown() {
@@ -26,7 +26,7 @@ function countdown() {
 }
 
 function formatTime(time) {
-    return time < 10 ? "0"+time : time;
+    return time < 10 ? `0${time}` : time; //return time < 10 ? "0"+time : time;
 }
 
 countdown();

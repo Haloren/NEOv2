@@ -51,8 +51,31 @@ h2 {
     margin: 0 1rem;
 }
 
+.astroid-info {
+    width: 100%;
+    position: fixed;
+    bottom: 10%;
+}
+    .astroid-info img {
+        position: relative;
+        margin: 10px;
+        padding: 10px;
+    }
+
+.astroid-distance {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+.astroid-size {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+}
+    
 .copyright {
     position: fixed;
     bottom: 10px;
-    right: 10px;
+    right: 50px;
 }
