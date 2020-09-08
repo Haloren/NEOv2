@@ -4,8 +4,10 @@ const m = document.getElementById('minutes');
 const s = document.getElementById('seconds');
 
 // Nearest approach astroid or default to "13 Apr 2029"
-const nearestApproach = "13 Apr 2029"; 
+const nearestApproach = "2029-04-13"; 
 
+
+// Countdown Timer
 function countdown() {
     const nearestDate = new Date(nearestApproach);
     const currentDate = new Date();
@@ -31,3 +33,4 @@ function formatTime(time) {
 
 countdown();
 setInterval(countdown, 1000); //countdown by 1 second
+
