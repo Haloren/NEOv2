@@ -34,3 +34,14 @@ function formatTime(time) {
 countdown();
 setInterval(countdown, 1000); //countdown by 1 second
 
+// Fetch NEO Information
+function fetchNEO() {
+    // start_date = current date end_date= current date +1 day & add API key
+    fetch("https://api.nasa.gov/neo/rest/v1/feed?start_date=2029-04-13&end_date=2029-04-13&api_key=DEMO_KEY")
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(json){
+            console.log(json);
+        })
+}
