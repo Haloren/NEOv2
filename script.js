@@ -1,11 +1,11 @@
+// TIMER TILL NEXT NEO
 const d = document.getElementById('days');
 const h = document.getElementById('hours');
 const m = document.getElementById('minutes');
 const s = document.getElementById('seconds');
 
-// Nearest approach astroid or default to "13 Apr 2029"
-const nearestApproach = "2029-04-13"; 
-
+// Nearest approach (close_approach_date_full) or default to "2029-Apr-13 21:46"
+const nearestApproach = "2029-04-13 21:46"; 
 
 // Countdown Timer
 function countdown() {
@@ -27,14 +27,16 @@ function countdown() {
     s.innerHTML = formatTime(seconds);
 }
 
+//add a zero before single digit numbers
 function formatTime(time) {
-    return time < 10 ? `0${time}` : time; //return time < 10 ? "0"+time : time;
+    return time < 10 ? `0${time}` : time; 
 }
-
+//countdown by 1 second
 countdown();
-setInterval(countdown, 1000); //countdown by 1 second
+setInterval(countdown, 1000);
 
-// Fetch NEO Information
+
+// FETCH NEO DATA
 function fetchNEO() {
     // start_date = current date end_date= current date +1 day & add API key
     fetch("https://api.nasa.gov/neo/rest/v1/feed?start_date=2029-04-13&end_date=2029-04-13&api_key=DEMO_KEY")
