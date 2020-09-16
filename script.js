@@ -36,14 +36,34 @@ countdown();
 setInterval(countdown, 1000);
 
 
-// FETCH NEO DATA
+// FORMAT DATE FOR API FETCH
+function formatDate(date) {
+    let d = new Date(date),
+    month = '' + (d.getMonth() + 1),
+    day = '' + d.getDate(),
+    year = d.getFullYear();
+
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+    return [year, month, day].join('-');
+}
+const formatStartDate = formatDate(new Date());
+
+const endDate = new Date(formatStartDate);
+    endDate.setDate(endDate.getDate()+7);
+const formatEndDate = formatDate(endDate);
+
+// FETCH NEO DATA    
 function fetchNEO() {
     // start_date = current date end_date= current date +1 day & add API key
-    fetch("https://api.nasa.gov/neo/rest/v1/feed?start_date=2029-04-13&end_date=2029-04-13&api_key=DEMO_KEY")
+    fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${formatStartDate}&end_date=${formatEndDate}&api_key=${API_KEY}`)
         .then(function(response){
             return response.json();
         })
         .then(function(json){
             console.log(json);
         })
+    
 }
