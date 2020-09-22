@@ -52,18 +52,13 @@ function formatDate(date) {
 const formatStartDate = formatDate(new Date());
 
 const endDate = new Date(formatStartDate);
-    endDate.setDate(endDate.getDate()+7);
+    endDate.setDate(endDate.getDate()+3);
 const formatEndDate = formatDate(endDate);
 
 // FETCH NEO DATA    
 function fetchNEO() {
-    // start_date = current date end_date= current date +1 day & add API key
-    fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${formatStartDate}&end_date=${formatEndDate}&api_key=${API_KEY}`)
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(json){
-            console.log(json);
-        })
-    
+    // start_date = current date, end_date= current date+days, & add API key
+    fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${formatStartDate}&end_date=${formatEndDate}&api_key=6BA4cK9eCN7hdycLbdsRUZTzehK1qaNTRFiqUfaI`)
+        .then(res => res.json())
+        .then(json => console.log(json));
 }

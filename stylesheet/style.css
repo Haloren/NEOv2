@@ -65,30 +65,17 @@ h2 {
 .astroid-distance {
     position: fixed;
     bottom: 50px;
-    right: 50px;
+    left: 50px;
 }
 
 .astroid-size {
     position: fixed;
     bottom: 50px;
-    left: 50px;
+    right: 50px;
 }
     
 .copyright {
     position: fixed;
     bottom: 10px;
     right: 50px;
-}
-
-/* RED THEME */
-tint the background image
-.overlay {
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    overflow: auto;
-    top: 0px;
-    left: 0px;
-    background: rgba(0, 0, 0, 0.7); 
 }
