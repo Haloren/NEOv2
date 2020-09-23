@@ -35,7 +35,12 @@ h1 {
 h2 {
 
 }
+/* h3 should provide information on objects on HOVER */
+h3 {
 
+}
+
+/* COUNTDOWN TIMER */
 .countdown-container {
     display: flex;
     text-align: center;
@@ -51,29 +56,71 @@ h2 {
     margin: 0 1rem;
 }
 
-.astroid-info {
+/* CARDS FOR IMAGES */
+.asteroid-info {
     width: 100%;
     position: fixed;
     bottom: 10%;
 }
-    .astroid-info img {
+    .asteroid-info img {
         position: relative;
         margin: 10px;
         padding: 10px;
     }
 
-.astroid-distance {
+.asteroid-distance {
     position: fixed;
     bottom: 50px;
     left: 50px;
 }
 
-.astroid-size {
+.asteroid-size {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 33%;
+    right: 25%;
+    border: #0489ee 2px solid;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px #00113f;
+    background-color: hsla(229, 100%, 90%, 0.3);
+    color: #fdecdc;
+    text-shadow: 1px 1px #00113f;
+    text-align: center;
 }
-    
+
+/* IMAGES */
+.earth {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    left: -33%;
+    bottom: 0;
+}
+.lessthanmoon {
+    height: 25px;
+    font-weight: 25px;
+    left: -33%;
+}
+.moon {
+    height: 100px;
+    font-weight: 100px;
+    left: -20%;
+}
+.morethanmoon {
+    height: 25px;
+    font-weight: 25px;
+    left: -10%;
+}
+
+.asteroid2 {
+    height: 80px;
+    weight: 80px;
+}
+.pyramids {
+    height: 75px;
+    width: 100;
+}
+
+/* COPYRIGHT */
 .copyright {
     position: fixed;
     bottom: 10px;
