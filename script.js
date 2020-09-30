@@ -4,6 +4,20 @@ const h = document.getElementById('hours');
 const m = document.getElementById('minutes');
 const s = document.getElementById('seconds');
 
+// Fetch NEO data
+//let start_date=today let end_date=today+6
+const loadNeos = () => {
+    fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2020-09-29&end_date=2020-09-30&api_key=DEMO_KEY`)
+    .then(resp => resp.json())
+    // .then(json => console.log(json))
+    .then((data) => {
+        // debugger
+        //data.near_earth_objects["2020-09-29"][0].close_approach_data[0].miss_distance.lunar
+        data.near_earth_objects["2020-09-29"].filter(e => e.close_approach_data[0].miss_distance.lunar < 20)[0]
+    })        
+}    
+
+
 // Nearest approach (close_approach_date_full) or default to "2029-Apr-13 21:46"
 const nearestApproach = "2029-04-13 21:46"; 
 
@@ -34,3 +48,4 @@ function formatTime(time) {
 //countdown by 1 second
 countdown();
 setInterval(countdown, 1000);
+

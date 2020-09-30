@@ -1,2 +1,0 @@
-class NeOsController < ApplicationController
-end

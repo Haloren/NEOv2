@@ -33,7 +33,7 @@ h1 {
     text-shadow: -3px -3px #fdecdc;
 }
 h2 {
-
+    z-index: 1;
 }
 /* h3 should provide information on objects on HOVER */
 h3 {
@@ -44,6 +44,7 @@ h3 {
 .countdown-container {
     display: flex;
     text-align: center;
+    z-index: 1;
 }
 
 .datetime {
@@ -89,25 +90,25 @@ h3 {
 
 /* IMAGES */
 .earth {
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     position: absolute;
     left: -33%;
     bottom: 0;
 }
 .lessthanmoon {
-    height: 25px;
-    font-weight: 25px;
+    height: 35px;
+    font-weight: 35px;
     left: -33%;
 }
 .moon {
-    height: 100px;
-    font-weight: 100px;
+    height: 135px;
+    font-weight: 135px;
     left: -20%;
 }
 .morethanmoon {
-    height: 25px;
-    font-weight: 25px;
+    height: 35px;
+    font-weight: 35px;
     left: -10%;
 }
 
