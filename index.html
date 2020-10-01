@@ -36,18 +36,25 @@
         </div>
     </article>
     <h2>April 13, 2029  </h2>
-    <article class="asteroid-info">
+    <button class="show-size" onclick="showSize()">Distance and Diameter</button>
+    <article id="showMore" style="display: none" class="asteroid-info">
         
         <div class="asteroid-distance"> 
             <!-- Earth ~ 12,742 km  -->
             <img src="./images/Terra.png" class="earth" alt="Earth">
+
+            <!-- Display if LD =< 1 -->
             <img src="./images/NEO.png" class="lessthanmoon" alt="Asteroid">
+            
             <!-- Moon ~ 3,474.2 km  -->
             <img src="./images/Moon.png" class="moon" alt="Moon">
             <!-- Default to .10 Lunar Distance (31,000 km) -->
+
+            <!-- Display if LD > 1 -->
             <img src="./images/NEO.png" class="morethanmoon" alt="Asteroid">
             <h3>0.10 Lunar Distance (31,000 km)</h3>
         </div>
+
         <div class="asteroid-size">
             <img src="./images/NEO.png" class="asteroid2" alt="Asteroid">
             <img src="./images/Pyramids.png" class="pyramids" alt="Pyramids">

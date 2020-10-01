@@ -12,11 +12,12 @@ const loadNeos = () => {
     // .then(json => console.log(json))
     .then((data) => {
         // debugger
-        //data.near_earth_objects["2020-09-29"][0].close_approach_data[0].miss_distance.lunar
         data.near_earth_objects["2020-09-29"].filter(e => e.close_approach_data[0].miss_distance.lunar < 20)[0]
     })        
 }    
 
+loadNeos();
+//data.near_earth_objects["2020-09-29"][0].close_approach_data[0].miss_distance.lunar
 
 // Nearest approach (close_approach_date_full) or default to "2029-Apr-13 21:46"
 const nearestApproach = "2029-04-13 21:46"; 
@@ -49,3 +50,10 @@ function formatTime(time) {
 countdown();
 setInterval(countdown, 1000);
 
+//onclick of distance and diameter button
+function showSize() {
+    let x = document.getElementById("showMore");
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    }
+}
