@@ -1,23 +1,52 @@
+//Format current date for API call start_date & end_date 
+let today = new Date();
+let dd = today.getDate();
+let mm = today.getMonth()+1;
+const yyyy = today.getFullYear();
+if(dd<10)
+{dd = `0${dd}`;}
+if(mm<10)
+{mm = `0${mm}`;}
+startDate = `${yyyy}-${mm}-${dd}`
+console.log(startDate);
+let ed = today.getDate()+3;
+if(ed<10)
+{ed = `0${ed}`;}
+endDate = `${yyyy}-${mm}-${ed}`
+console.log(endDate);
+
+const NASA_API = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=DEMO_KEY`
+console.log(NASA_API);
+// Fetch NEO data on page load
+document.addEventListener("DOMContentLoaded", () => loadNeos())
+
+const loadNeos = () => {
+    fetch(NASA_API)
+    .then(resp => resp.json())
+    .then(json => console.log(json))
+    // .then((data) => {
+    //     data.near_earth_objects["2020-09-29"].filter(e => e.close_approach_data[0].miss_distance.lunar < 20)[0]
+    // })        
+}    
+
+//data.near_earth_objects["2020-09-29"][0].close_approach_data[0].miss_distance.lunar
+
+
+
+
+
+
+
+
+
+
+
+
 // TIMER TILL NEXT NEO
 const d = document.getElementById('days');
 const h = document.getElementById('hours');
 const m = document.getElementById('minutes');
 const s = document.getElementById('seconds');
-
-// Fetch NEO data
-//let start_date=today let end_date=today+6
-const loadNeos = () => {
-    fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2020-09-29&end_date=2020-09-30&api_key=DEMO_KEY`)
-    .then(resp => resp.json())
-    // .then(json => console.log(json))
-    .then((data) => {
-        // debugger
-        data.near_earth_objects["2020-09-29"].filter(e => e.close_approach_data[0].miss_distance.lunar < 20)[0]
-    })        
-}    
-
-loadNeos();
-//data.near_earth_objects["2020-09-29"][0].close_approach_data[0].miss_distance.lunar
 
 // Nearest approach (close_approach_date_full) or default to "2029-Apr-13 21:46"
 const nearestApproach = "2029-04-13 21:46"; 

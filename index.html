@@ -6,16 +6,17 @@
     <title>NEOv2</title>
 
     <link rel="stylesheet" href="./stylesheet/style.css">
-    
   </head>
+
   <body>
     <header>
         <h1> Near Earth Objects </h1>
     </header>
     
-    <!-- Nearest Approach Asteroid Name should populate here  -->
-    <!-- Default to 99942 Apophis  -->
-    <h2> 99942 Apophis closest approach in: </h2>
+    <main>
+        <h2> ${Name} closest approach in: </h2>
+    </main>
+    
 
     <article class="countdown-container">
         <div class="daytime">
@@ -35,8 +36,14 @@
             <span>seconds</span>
         </div>
     </article>
-    <h2>April 13, 2029  </h2>
+
+
+
+    <h2> April 13, 2029 </h2>
     <button class="show-size" onclick="showSize()">Distance and Diameter</button>
+    
+    
+    
     <article id="showMore" style="display: none" class="asteroid-info">
         
         <div class="asteroid-distance"> 
