@@ -17,19 +17,19 @@ console.log(endDate);
 
 const NASA_API = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=DEMO_KEY`
 console.log(NASA_API);
-// Fetch NEO data on page load
+// Fetch NEO data on page load document.onload
 document.addEventListener("DOMContentLoaded", () => loadNeos())
 
 const loadNeos = () => {
     fetch(NASA_API)
     .then(resp => resp.json())
-    .then(json => console.log(json))
-    // .then((data) => {
-    //     data.near_earth_objects["2020-09-29"].filter(e => e.close_approach_data[0].miss_distance.lunar < 20)[0]
-    // })        
+    .then(json => {
+        // console.log(json)
+        // debugger
+        json.near_earth_objects[`${startDate}`]
+    })
 }    
-
-//data.near_earth_objects["2020-09-29"][0].close_approach_data[0].miss_distance.lunar
+//json.near_earth_objects["2020-09-29"][0].close_approach_data[0].miss_distance.lunar < 20)
 
 
 
@@ -84,5 +84,7 @@ function showSize() {
     let x = document.getElementById("showMore");
     if (x.style.display === "none") {
         x.style.display = "flex";
+    } else {
+        x.style.display = "none"
     }
 }
