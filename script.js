@@ -1,6 +1,6 @@
 //Format current date for API call start_date & end_date 
 let today = new Date();
-let dd = today.getDate();
+let dd = today.getDate()+1;//todays date plus one so there's always something to count toward
 let mm = today.getMonth()+1;
 const yyyy = today.getFullYear();
 if(dd<10)
@@ -8,32 +8,46 @@ if(dd<10)
 if(mm<10)
 {mm = `0${mm}`;}
 startDate = `${yyyy}-${mm}-${dd}`
-console.log(startDate);
-let ed = today.getDate()+3;
-if(ed<10)
-{ed = `0${ed}`;}
-endDate = `${yyyy}-${mm}-${ed}`
-console.log(endDate);
+// console.log(startDate);
 
-const NASA_API = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=DEMO_KEY`
-console.log(NASA_API);
+// API_KEY="6BA4cK9eCN7hdycLbdsRUZTzehK1qaNTRFiqUfaI"
+const NASA_API = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=${API_KEY}`
+console.log(NASA_API)
+
+const main = document.querySelector("main")
+
+// console.log(NASA_API);
 // Fetch NEO data on page load document.onload
 document.addEventListener("DOMContentLoaded", () => loadNeos())
 
 const loadNeos = () => {
     fetch(NASA_API)
     .then(resp => resp.json())
+    // .then(json => console.log(json))
     .then(json => {
-        // console.log(json)
-        // debugger
-        json.near_earth_objects[`${startDate}`]
+        json.near_earth_objects[`${startDate}`].forEach(neo => renderNeos(neo))        
     })
-}    
-//json.near_earth_objects["2020-09-29"][0].close_approach_data[0].miss_distance.lunar < 20)
+}   
 
+const renderNeos = (neoHash) => {
+//add while loop to get the first NEO that is less than 20 LD
+    neoName = (neoHash.name).substring(1, (neoHash.name).length-1)
+    
+    neoDate = (neoHash.close_approach_data[0].close_approach_date_full)
+    
+    neoLunar = (parseFloat(neoHash.close_approach_data[0].miss_distance.lunar)).toFixed(2)
+    neoKM = Math.round(neoHash.close_approach_data[0].miss_distance.kilometers)
 
+    neoDiameterMin = Math.round(neoHash.estimated_diameter.meters.estimated_diameter_min)
+    neoDiameterMax = Math.round(neoHash.estimated_diameter.meters.estimated_diameter_max)
 
-
+    console.log(`*************************************\nName: ${neoName}`)
+    console.log(`Approach Date: ${neoDate}`)
+    console.log(`Lunar Miss Distance: ${neoLunar}`)
+    console.log(`Kilometer Miss Distance: ${neoKM}`)
+    console.log(`Min Est Diameter: ${neoDiameterMax}`)
+    console.log(`Max Est Diameter: ${neoDiameterMin}`)
+}
 
 
 
@@ -49,7 +63,7 @@ const m = document.getElementById('minutes');
 const s = document.getElementById('seconds');
 
 // Nearest approach (close_approach_date_full) or default to "2029-Apr-13 21:46"
-const nearestApproach = "2029-04-13 21:46"; 
+let nearestApproach = "2020-Oct-08 19:15"; 
 
 // Countdown Timer
 function countdown() {
