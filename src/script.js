@@ -10,13 +10,12 @@ if(mm<10)
 startDate = `${yyyy}-${mm}-${dd}`
 // console.log(startDate);
 
-// API_KEY="6BA4cK9eCN7hdycLbdsRUZTzehK1qaNTRFiqUfaI"
+API_KEY="6BA4cK9eCN7hdycLbdsRUZTzehK1qaNTRFiqUfaI"
 const NASA_API = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${startDate}&api_key=${API_KEY}`
-console.log(NASA_API)
+// console.log(NASA_API)
 
 const main = document.querySelector("main")
 
-// console.log(NASA_API);
 // Fetch NEO data on page load document.onload
 document.addEventListener("DOMContentLoaded", () => loadNeos())
 
@@ -24,13 +23,15 @@ const loadNeos = () => {
     fetch(NASA_API)
     .then(resp => resp.json())
     // .then(json => console.log(json))
+    // .then(json => {
+    //     json.near_earth_objects[`${startDate}`].forEach(neo => renderNeos(neo))        
+    // })
     .then(json => {
-        json.near_earth_objects[`${startDate}`].forEach(neo => renderNeos(neo))        
+        renderNeo(json.near_earth_objects[`${startDate}`][0])
     })
 }   
 
-const renderNeos = (neoHash) => {
-//add while loop to get the first NEO that is less than 20 LD
+const renderNeo = (neoHash) => { //renderNeos
     neoName = (neoHash.name).substring(1, (neoHash.name).length-1)
     
     neoDate = (neoHash.close_approach_data[0].close_approach_date_full)
@@ -47,6 +48,15 @@ const renderNeos = (neoHash) => {
     console.log(`Kilometer Miss Distance: ${neoKM}`)
     console.log(`Min Est Diameter: ${neoDiameterMax}`)
     console.log(`Max Est Diameter: ${neoDiameterMin}`)
+
+    //NEO
+    const h3 = document.createElement("h3")
+    h3.setAttribute("class", "neoName")
+    formatNeoName = (neoHash.name).substring(1, (neoHash.name).length-1);
+    neoDate = neoHash.close_approach_data[0].close_approach_date_full
+    h3.innerHTML = formatNeoName + " - " + neoDate
+    main.appendChild(h3)
+
 }
 
 
@@ -63,7 +73,7 @@ const m = document.getElementById('minutes');
 const s = document.getElementById('seconds');
 
 // Nearest approach (close_approach_date_full) or default to "2029-Apr-13 21:46"
-let nearestApproach = "2020-Oct-08 19:15"; 
+let nearestApproach = "2020-Oct-07 19:04"; 
 
 // Countdown Timer
 function countdown() {
