@@ -42,7 +42,7 @@ const renderNeo = (neoHash) => { //renderNeos
     neoDiameterMin = Math.round(neoHash.estimated_diameter.meters.estimated_diameter_min)
     neoDiameterMax = Math.round(neoHash.estimated_diameter.meters.estimated_diameter_max)
 
-    console.log(`*************************************\nName: ${neoName}`)
+    console.log(`Name: ${neoName}`)
     console.log(`Approach Date: ${neoDate}`)
     console.log(`Lunar Miss Distance: ${neoLunar}`)
     console.log(`Kilometer Miss Distance: ${neoKM}`)
@@ -56,24 +56,16 @@ const renderNeo = (neoHash) => { //renderNeos
     neoDate = neoHash.close_approach_data[0].close_approach_date_full
     h3.innerHTML = formatNeoName + " - " + neoDate
     main.appendChild(h3)
-
 }
 
-
-
-
-
-
-
+// Nearest approach (close_approach_date_full) or default to "2029-Apr-13 21:46"
+let nearestApproach = new Date() + 1; //neoDate goes here
 
 // TIMER TILL NEXT NEO
 const d = document.getElementById('days');
 const h = document.getElementById('hours');
 const m = document.getElementById('minutes');
 const s = document.getElementById('seconds');
-
-// Nearest approach (close_approach_date_full) or default to "2029-Apr-13 21:46"
-let nearestApproach = "2020-Oct-07 19:04"; 
 
 // Countdown Timer
 function countdown() {
