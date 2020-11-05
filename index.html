@@ -17,6 +17,10 @@
     <h2> Next closest approach in: <h2>
     <article class="countdown-container">
         <div class="daytime">
+            <p class="digit" id="years">00</p>
+            <span>years</span>
+        </div>     
+        <div class="daytime">
             <p class="digit" id="days">00</p>
             <span>days</span>
         </div>
@@ -38,33 +42,12 @@
         
     </main>
 
-    <br>
-    <button class="show-size" onclick="showSize()">Distance and Diameter</button>
-    
+    <div class=toggle-button>
+        <button class="show-size" onclick="showSize()">Current NEOs</button>
+    </div>
+
     <article id="showMore" style="display: none" class="asteroid-info">
         
-        <div class="asteroid-distance"> 
-            <!-- Earth ~ 12,742 km  -->
-            <img src="./images/Terra.png" class="earth" alt="Earth">
-
-            <!-- Display if LD =< 1 -->
-            <img src="./images/NEO.png" class="lessthanmoon" alt="Asteroid">
-            
-            <!-- Moon ~ 3,474.2 km  -->
-            <img src="./images/Moon.png" class="moon" alt="Moon">
-            <!-- Default to .10 Lunar Distance (31,000 km) -->
-
-            <!-- Display if LD > 1 -->
-            <img src="./images/NEO.png" class="morethanmoon" alt="Asteroid">
-            <h3>0.10 Lunar Distance (31,000 km)</h3>
-        </div>
-
-        <div class="asteroid-size">
-            <img src="./images/NEO.png" class="asteroid2" alt="Asteroid">
-            <img src="./images/Pyramids.png" class="pyramids" alt="Pyramids">
-            <!-- Default to 1,100ft (310-340 m) -->
-            <h3> Est Diameter: 310-380 m </h3>
-        </div>
     </article>
 
     <footer>

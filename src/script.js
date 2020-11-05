@@ -59,7 +59,7 @@ const renderNeo = (neoHash) => { //renderNeos
 }
 
 // Nearest approach (close_approach_date_full) or default to "2029-Apr-13 21:46"
-let nearestApproach = new Date() + 1; //neoDate goes here
+const nearestApproach = "2029-Apr-13 21:46"; //neoDate goes here
 
 // TIMER TILL NEXT NEO
 const d = document.getElementById('days');
