@@ -70,11 +70,12 @@ button {
 
 /* DISTANCE AND DIAMETER BUTTON */
 .toggle-button {
-    margin-left: 34%;
+    margin-left: 0;
 }
 .show-size {
-    font-size: 1rem;
+    font-size: 1.2rem;
     z-index: 1;
+    width: 100%;
 }
 .show-size:hover {
     background-color: #fdecdc;

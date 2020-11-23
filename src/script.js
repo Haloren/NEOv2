@@ -99,7 +99,7 @@ countdown();
 setInterval(countdown, 1000);
 
 //onclick of distance and diameter button
-function showSize() {
+function toggle() {
     let x = document.getElementById("showMore");
     if (x.style.display === "none") {
         x.style.display = "flex";
