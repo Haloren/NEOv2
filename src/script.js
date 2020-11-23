@@ -62,6 +62,7 @@ const renderNeo = (neoHash) => { //renderNeos
 const nearestApproach = "2029-Apr-13 21:46"; //neoDate goes here
 
 // TIMER TILL NEXT NEO
+// const y = document.getElementById('year');
 const d = document.getElementById('days');
 const h = document.getElementById('hours');
 const m = document.getElementById('minutes');
@@ -74,6 +75,7 @@ function countdown() {
 
     const totalSeconds = (nearestDate - currentDate) / 1000;
 
+    // const years = Math.floor(totalSeconds / 3600);
     const days = Math.floor(totalSeconds / 3600 / 24);
     const hours = Math.floor(totalSeconds / 3600) % 24;
     const minutes = Math.floor(totalSeconds / 60) % 60;
@@ -81,6 +83,7 @@ function countdown() {
 
     // console.log(days, hours, minutes, seconds);
 
+    // y.innerHTML = formatTime(years);
     d.innerHTML = formatTime(days);
     h.innerHTML = formatTime(hours);
     m.innerHTML = formatTime(minutes);
